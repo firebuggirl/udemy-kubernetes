@@ -1,0 +1,9 @@
+# Deployment Commands
+
+` kubectl get deployments `
+
+` kubectl rollout status `
+
+` kubectl set image `
+
+` kubectl rollout history `

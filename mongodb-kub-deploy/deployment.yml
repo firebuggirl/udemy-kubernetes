@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mongodb-kubernetes
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-kubernetes
+  replicas: 4
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: mongodb-kubernetes
+    spec:     # pod spec
+      containers:
+      - name: mongo
+        image: gcr.io/bigtreeinthesky3/mongo:v1 # image we pushed
+        ports:
+        - containerPort: 27017
